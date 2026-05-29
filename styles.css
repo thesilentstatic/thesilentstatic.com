@@ -122,7 +122,7 @@ body {
   align-items: center;
   justify-content: flex-end;
   text-align: center;
-  padding: 20px 20px 22vh;
+  padding: 40px 20px 22vh;
   position: relative;
   border-bottom: 1px solid var(--border);
   background-image: url('assets/Header style.jpg');
