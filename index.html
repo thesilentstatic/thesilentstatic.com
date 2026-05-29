@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="529 Website - Modern web presence">
+  <title>529 • Website</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <div class="nav-brand">
+        <a href="#">529</a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="nav-cta" id="cta-button">Get Started</button>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <h1>Simple. Modern. <span class="accent">Powerful.</span></h1>
+          <p class="hero-subtitle">
+            A clean foundation for the 529 website. Built with modern web standards.
+          </p>
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary">Start a Project</a>
+            <a href="#features" class="btn btn-secondary">Learn More</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-card">
+            <div class="card-header"></div>
+            <div class="card-body">
+              <div class="stat">
+                <span class="stat-value">100%</span>
+                <span class="stat-label">Modern Stack</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>About 529</h2>
+          <p>We're building something great.</p>
+        </div>
+        <div class="about-grid">
+          <div class="about-card">
+            <h3>Our Mission</h3>
+            <p>Deliver elegant, performant web experiences that just work.</p>
+          </div>
+          <div class="about-card">
+            <h3>Philosophy</h3>
+            <p>Less is more. We prefer simple, maintainable code over complexity.</p>
+          </div>
+          <div class="about-card">
+            <h3>Built For</h3>
+            <p>People who value clarity, speed, and beautiful interfaces.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section id="features" class="section section-alt">
+      <div class="container">
+        <div class="section-header">
+          <h2>Features</h2>
+          <p>Everything you need to get started fast.</p>
+        </div>
+        <div class="features-grid">
+          <div class="feature">
+            <div class="feature-icon">⚡</div>
+            <h3>Lightning Fast</h3>
+            <p>Zero build step. Open <code>index.html</code> and you're live.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">📱</div>
+            <h3>Fully Responsive</h3>
+            <p>Looks great on phones, tablets, and desktops out of the box.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">🎨</div>
+            <h3>Easy to Customize</h3>
+            <p>Clean, well-commented CSS. Change colors and layout in minutes.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">🧩</div>
+            <h3>Ready for Growth</h3>
+            <p>Structured for adding components, forms, or a full framework later.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Let's Build Something</h2>
+          <p>Have an idea? We'd love to hear from you.</p>
+        </div>
+        <form class="contact-form" id="contact-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+          <p class="form-note" id="form-status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 529. Built with modern web technologies.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
