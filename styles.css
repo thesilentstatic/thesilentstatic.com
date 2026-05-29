@@ -321,6 +321,15 @@ body {
   color: var(--text-muted);
 }
 
+/* New streaming platforms */
+.stream-btn.audiomack:hover {
+  border-color: #f59e0b;
+}
+
+.stream-btn.deezer:hover {
+  border-color: #00c7f2;
+}
+
 .listen-note {
   text-align: center;
   color: var(--text-muted);
