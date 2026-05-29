@@ -369,37 +369,14 @@ body {
   position: relative;
   overflow: hidden;
   border-radius: 4px;
-}
-
-.about-visual-link {
-  display: block;
-  position: relative;
   height: 380px;
-  overflow: hidden;
 }
 
-.about-visual-link img {
+.about-visual iframe {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  border: none;
   display: block;
-}
-
-.about-visual-link:hover .play-overlay {
-  background: rgba(0, 0, 0, 0.55);
-}
-
-/* Larger play icon for About section */
-.play-icon.large {
-  width: 68px;
-  height: 68px;
-}
-
-.play-icon.large::after {
-  border-left-width: 20px;
-  border-top-width: 12px;
-  border-bottom-width: 12px;
-  margin-left: 5px;
 }
 
 /* Media */
