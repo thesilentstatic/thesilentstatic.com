@@ -1,17 +1,28 @@
-// 529 Website - Main JavaScript
+// THE SILENT STATIC — Site Scripts
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Mobile navigation toggle
+  // Respect reduced motion preference + switch between GIF and static logo
+  const animatedLogo = document.getElementById('animated-logo');
+  const staticLogo = document.getElementById('static-logo');
+
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (prefersReducedMotion && animatedLogo && staticLogo) {
+    animatedLogo.style.display = 'none';
+    staticLogo.style.display = 'block';
+  }
+
+  // Mobile nav toggle
   const navToggle = document.querySelector('.nav-toggle');
   const navLinks = document.querySelector('.nav-links');
 
   if (navToggle && navLinks) {
     navToggle.addEventListener('click', () => {
       const isOpen = navLinks.classList.toggle('open');
-      navToggle.setAttribute('aria-expanded', isOpen);
+      navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     });
 
-    // Close mobile nav when clicking a link
+    // Close on link click (mobile)
     navLinks.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         navLinks.classList.remove('open');
@@ -20,106 +31,48 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Smooth scroll for anchor links
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      const target = document.querySelector(this.getAttribute('href'));
-      if (target) {
-        e.preventDefault();
-        const headerOffset = 80;
-        const elementPosition = target.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.scrollY - headerOffset;
+  // Email list signup (demo - replace with real service)
+  const emailForm = document.getElementById('email-form');
+  const formMessage = document.getElementById('form-message');
 
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: 'smooth'
-        });
-      }
-    });
-  });
-
-  // Contact form handling (demo - replace with real backend)
-  const contactForm = document.getElementById('contact-form');
-  const formStatus = document.getElementById('form-status');
-
-  if (contactForm) {
-    contactForm.addEventListener('submit', async (e) => {
+  if (emailForm) {
+    emailForm.addEventListener('submit', async (e) => {
       e.preventDefault();
 
-      const submitButton = contactForm.querySelector('button[type="submit"]');
-      const originalText = submitButton.textContent;
+      const input = emailForm.querySelector('input');
+      const button = emailForm.querySelector('button');
+      const originalText = button.textContent;
 
-      submitButton.disabled = true;
-      submitButton.textContent = 'Sending...';
+      button.disabled = true;
+      button.textContent = 'JOINING...';
 
-      // Simulate network request
-      await new Promise(resolve => setTimeout(resolve, 900));
+      // Simulate API call
+      await new Promise(r => setTimeout(r, 650));
 
-      // In production: send data to your backend / Formspree / Netlify Functions, etc.
-      const formData = new FormData(contactForm);
-      console.log('Form submitted:', Object.fromEntries(formData));
+      // In production: replace this with Mailchimp, Buttondown, ConvertKit, etc.
+      console.log('New subscriber:', input.value);
 
-      formStatus.textContent = 'Thanks! Your message has been sent. We\'ll get back to you soon.';
-      formStatus.style.color = '#22c55e';
+      formMessage.textContent = 'YOU\'RE IN. WELCOME TO THE NOISE.';
+      formMessage.style.color = '#b91c1c';
 
-      contactForm.reset();
+      emailForm.reset();
 
-      submitButton.disabled = false;
-      submitButton.textContent = originalText;
+      button.disabled = false;
+      button.textContent = originalText;
 
-      // Clear success message after a few seconds
       setTimeout(() => {
-        formStatus.textContent = '';
-      }, 5000);
+        formMessage.textContent = '';
+      }, 6000);
     });
   }
 
-  // Hero CTA button animation hint
-  const ctaButton = document.getElementById('cta-button');
-  if (ctaButton) {
-    ctaButton.addEventListener('click', () => {
-      const contactSection = document.getElementById('contact');
-      if (contactSection) {
-        const headerOffset = 80;
-        const elementPosition = contactSection.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.scrollY - headerOffset;
-
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: 'smooth'
-        });
-      }
-    });
-  }
-
-  // Simple scroll progress indicator (optional enhancement)
-  const progressBar = document.createElement('div');
-  progressBar.style.cssText = `
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 2px;
-    background: var(--accent, #3b82f6);
-    z-index: 9999;
-    transition: width 0.1s ease;
-  `;
-  document.body.appendChild(progressBar);
-
-  window.addEventListener('scroll', () => {
-    const scrollTop = window.scrollY;
-    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-    const scrollPercent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-    progressBar.style.width = `${scrollPercent}%`;
-  });
-
-  // Keyboard accessibility: close mobile menu on Escape
+  // Keyboard escape closes mobile menu
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && navLinks && navLinks.classList.contains('open')) {
+    if (e.key === 'Escape' && navLinks?.classList.contains('open')) {
       navLinks.classList.remove('open');
-      if (navToggle) navToggle.setAttribute('aria-expanded', 'false');
+      navToggle?.setAttribute('aria-expanded', 'false');
     }
   });
 
-  // Console welcome message (dev only)
-  console.log('%c[529] Website initialized. Ready for development.', 'color:#3b82f6');
+  console.log('%c[THE SILENT STATIC] Raw site initialized. Turn it up.', 'color:#b91c1c');
 });

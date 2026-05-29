@@ -1,67 +1,76 @@
-# 529 Website
+# The Silent Static — Official Website
 
-A modern, responsive website for 529.
+Raw, gritty rock website for The Silent Static.
 
-## Getting Started
+**Live site:** https://www.thesilentstatic.com (planned)
 
-Simply open `index.html` in your browser:
+## Current Status
+
+- Static HTML/CSS/JS site (no build step)
+- Designed with a raw, high-energy rock/punk aesthetic
+- Focused on driving streams to Spotify, Apple Music, YouTube, etc.
+
+## Local Development
 
 ```bash
-# On Windows
+# Open directly
 start index.html
 
-# Or with Live Server (VS Code extension recommended)
+# Recommended: Live Server in VS Code (auto-reload)
 ```
 
-No build step required — pure HTML, CSS, and JavaScript.
+Or use any static server:
+
+```bash
+npx serve .
+# or
+python -m http.server 8000
+```
 
 ## Project Structure
 
 ```
-529website/
-├── index.html      # Main page
-├── styles.css      # All styling
-├── script.js       # Interactivity & behavior
+thesilentstatic/
+├── index.html
+├── styles.css
+├── script.js
 ├── README.md
-└── .gitignore
+├── .gitignore
+└── assets/
+    ├── logo.png              # Main static logo (new design)
+    ├── logo-animated.gif     # Animated hero logo (currently 4MB — needs optimization)
+    ├── Animated logo.mp4     # Alternative video version of logo
+    └── Header style.jpg      # Facebook header reference (not used on site)
 ```
 
-## Development
+## Deployment Options
 
-- Use the [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) extension in VS Code for hot reload.
-- Or any local server:
-  ```bash
-  npx serve .
-  # or
-  python -m http.server 8000
-  ```
-
-## Deployment
-
-Ready to deploy anywhere static hosting works:
-
-- [Vercel](https://vercel.com)
-- [Netlify](https://netlify.com)
-- [GitHub Pages](https://pages.github.com)
-- Cloudflare Pages
+- **GitHub Pages** (free with custom domain)
+- **Netlify** (drag & drop or Git)
+- **Vercel**
 - Any web host
 
-## Roadmap / TODO
+### Custom Domain (thesilentstatic.com)
 
-- [ ] Add real content and sections
-- [ ] Improve mobile navigation
-- [ ] Add contact form (or integrate Formspree / Netlify Forms)
-- [ ] Analytics integration
-- [ ] SEO & Open Graph tags
+After deploying, point your domain's A/CNAME records at the hosting provider and enable HTTPS.
 
-## Contributing
+## Next Steps / Roadmap
 
-Pull requests welcome. Please open an issue first to discuss major changes.
+- [ ] Add real streaming links (Spotify, Apple Music, YouTube Music, Bandcamp, etc.)
+- [ ] Add actual release artwork and photos
+- [ ] Embed music players (Spotify embed, YouTube, or custom audio)
+- [ ] Add upcoming shows / tour dates
+- [ ] Mailing list signup (Mailchimp, ConvertKit, or Buttondown)
+- [ ] Full discography section
+- [ ] Video / visualizer section
+- [ ] SEO + Open Graph tags for sharing
 
-## License
+## Branding Notes
 
-TBD
+- **Vibe:** Raw, gritty rock / punk energy
+- **Logo:** Located in `/assets/logo.jpg`
+- **Tone:** Direct, honest, unpolished where it counts
 
 ---
 
-Built with ❤️ using vanilla web technologies.
+Built for The Silent Static.
