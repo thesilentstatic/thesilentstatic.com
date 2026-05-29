@@ -37,10 +37,10 @@ thesilentstatic/
 ├── README.md
 ├── .gitignore
 └── assets/
-    ├── logo.png              # Main static logo (new design)
-    ├── logo-animated.gif     # Animated hero logo (currently 4MB — needs optimization)
-    ├── Animated logo.mp4     # Alternative video version of logo
-    └── Header style.jpg      # Facebook header reference (not used on site)
+    ├── logo.png              # Small logo used in navigation
+    ├── logo-animated.gif     # Animated version (not currently used in hero)
+    ├── Animated logo.mp4     # Alternative animated version
+    └── Header style.jpg      # Main hero background image (Facebook header style)
 ```
 
 ## Deployment Options

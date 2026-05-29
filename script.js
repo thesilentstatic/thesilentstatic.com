@@ -1,17 +1,6 @@
 // THE SILENT STATIC — Site Scripts
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Respect reduced motion preference + switch between GIF and static logo
-  const animatedLogo = document.getElementById('animated-logo');
-  const staticLogo = document.getElementById('static-logo');
-
-  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  if (prefersReducedMotion && animatedLogo && staticLogo) {
-    animatedLogo.style.display = 'none';
-    staticLogo.style.display = 'block';
-  }
-
   // Mobile nav toggle
   const navToggle = document.querySelector('.nav-toggle');
   const navLinks = document.querySelector('.nav-links');

@@ -52,12 +52,14 @@ body {
 }
 
 .nav-logo {
-  font-size: 1.1rem;
-  font-weight: 800;
-  letter-spacing: 1px;
-  color: var(--text);
+  display: flex;
+  align-items: center;
   text-decoration: none;
-  text-transform: uppercase;
+}
+
+.nav-logo-img {
+  height: 32px;
+  width: auto;
 }
 
 .nav-links {
@@ -120,45 +122,51 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 40px 20px 80px;
+  padding: 60px 20px 80px;
   position: relative;
   border-bottom: 1px solid var(--border);
+  background-image: url('assets/Header style.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-.band-logo {
-  max-height: 140px;
-  width: auto;
-  margin-bottom: 16px;
-  image-rendering: crisp-edges;
+/* Dark overlay for text readability over the header image */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(10, 10, 10, 0.65) 0%,
+    rgba(10, 10, 10, 0.75) 40%,
+    rgba(10, 10, 10, 0.85) 100%
+  );
+  z-index: 1;
 }
 
-/* Animated GIF version */
-.band-logo.animated {
-  max-height: 160px;
-  filter: contrast(1.08) saturate(1.15);
-}
-
-/* Static PNG fallback */
-.band-logo.static {
-  max-height: 135px;
+.hero-content {
+  position: relative;
+  z-index: 2;
 }
 
 .hero h1 {
-  font-size: clamp(2.8rem, 10vw, 5.5rem);
+  font-size: clamp(2.8rem, 10vw, 5.8rem);
   font-weight: 900;
   letter-spacing: 2px;
   line-height: 0.95;
   margin-bottom: 12px;
   text-transform: uppercase;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.7);
 }
 
 .tagline {
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   letter-spacing: 4px;
   color: var(--accent);
   font-weight: 700;
   margin-bottom: 40px;
   text-transform: uppercase;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
 }
 
 .hero-actions {
@@ -166,6 +174,8 @@ body {
   gap: 16px;
   flex-wrap: wrap;
   justify-content: center;
+  position: relative;
+  z-index: 2;
 }
 
 .hero-scroll {
@@ -175,6 +185,7 @@ body {
   letter-spacing: 3px;
   color: var(--text-muted);
   text-transform: uppercase;
+  z-index: 2;
 }
 
 /* Buttons */
