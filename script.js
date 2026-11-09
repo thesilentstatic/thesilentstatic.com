@@ -63,5 +63,26 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // Hidden visit counter. Nothing is shown on the page.
+  // Read the total: https://countapi.mileshilliard.com/api/v1/get/thesilentstatic.com-visits
+  countVisit();
+
   console.log('%c[THE SILENT STATIC] Raw site initialized. Turn it up.', 'color:#b91c1c');
 });
+
+function countVisit() {
+  const host = location.hostname;
+  if (!host || host === 'localhost' || host === '127.0.0.1') return;
+
+  try {
+    if (sessionStorage.getItem('tss-visit')) return;
+    sessionStorage.setItem('tss-visit', '1');
+  } catch (_) {
+    // Private mode can block storage. Still count this load.
+  }
+
+  fetch('https://countapi.mileshilliard.com/api/v1/hit/thesilentstatic.com-visits', {
+    cache: 'no-store',
+    keepalive: true
+  }).catch(() => {});
+}
