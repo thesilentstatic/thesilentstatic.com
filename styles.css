@@ -511,6 +511,17 @@ body {
   text-transform: uppercase;
 }
 
+.email-form input[name="_honey"] {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  flex: 0;
+  padding: 0;
+  border: 0;
+  opacity: 0;
+}
+
 .email-form input:focus {
   outline: none;
   border-color: var(--accent);
